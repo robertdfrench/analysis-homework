@@ -54,13 +54,13 @@
 
 \title{	
 \normalfont \normalsize 
-\textsc{university, school or department name} \\ [25pt] % Your university, school and/or department name(s)
+\textsc{University of Tennessee, Department of Mathematics} \\ [25pt] % Your university, school and/or department name(s)
 \horrule{0.5pt} \\[0.4cm] % Thin top horizontal rule
-\huge Assignment Title \\ % The assignment title
+\huge MATH 447 - Homework 4 \\ % The assignment title
 \horrule{2pt} \\[0.5cm] % Thick bottom horizontal rule
 }
 
-\author{John Smith} % Your name
+\author{Robert D. French} % Your name
 
 \date{\normalsize\today} % Today's date or a custom date
 
@@ -72,9 +72,17 @@
 %	PROBLEM 1
 %----------------------------------------------------------------------------------------
 
-\section{Problem title}
+\section{The set of real numbers is uncountable}
 
-\lipsum[2] % Dummy text
+\paragraph{Proof.}
+
+Assume the set $I=[0,1]$ is countable. This implies its elements are enumerable. That is, $I=\{x_1,x_2,\ldots,x_n,\ldots\}$.\\
+
+Now construct the set $I_1=\{x \in I | x \neq x_1\}$ so that $I_1 \subset I$ and $ I_1 = I \setminus \{x_1\}$. Clearly this construction can progress in a recursive fashion so that $I_j = I_{j-1} \setminus \{x_j\}$, and $I_j \supseteq I_{j+1} \supseteq \cdots$.\\
+
+Thus, we have establshed a collection of nested intervals, so we know $\exists \xi \in I_n \forall n \in \mathbb{N}$. Suppose $\xi = x_k$ for some $k \in \mathbb{N}$, then $\xi \notin I_k$, which contradicts the Nested Intervals Property. Clearly this is absurd, so we refute our hypothesis that $I=[0,1]$ is countable.\\
+
+Since $[0,1] \subseteq \mathbb{R}$ is uncountable, we know that $\mathbb{R}$ itself is uncountable.$\blacksquare$
 
 \begin{align} 
 \begin{split}
@@ -84,8 +92,6 @@
 &=x^3+3x^2y+3xy^2+y^3
 \end{split}					
 \end{align}
-
-Phasellus viverra nulla ut metus varius laoreet. Quisque rutrum. Aenean imperdiet. Etiam ultricies nisi vel augue. Curabitur ullamcorper ultricies
 
 %------------------------------------------------
 
