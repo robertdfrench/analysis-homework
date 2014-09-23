@@ -72,7 +72,9 @@
 %	PROBLEM 1
 %----------------------------------------------------------------------------------------
 
-\section{The set of real numbers is uncountable}
+\section{Uncountability of the Real Numbers}
+
+The set $\mathbb{R}$ of real numbers is uncountable.
 
 \paragraph{Proof.}
 
@@ -84,70 +86,51 @@ Thus, we have establshed a collection of nested intervals, so we know $\exists \
 
 Since $[0,1] \subseteq \mathbb{R}$ is uncountable, we know that $\mathbb{R}$ itself is uncountable.$\blacksquare$
 
-\begin{align} 
-\begin{split}
-(x+y)^3 	&= (x+y)^2(x+y)\\
-&=(x^2+2xy+y^2)(x+y)\\
-&=(x^3+2x^2y+xy^2) + (x^2y+2xy^2+y^3)\\
-&=x^3+3x^2y+3xy^2+y^3
-\end{split}					
-\end{align}
-
-%------------------------------------------------
-
-\subsection{Heading on level 2 (subsection)}
-
-Lorem ipsum dolor sit amet, consectetuer adipiscing elit. 
-\begin{align}
-A = 
-\begin{bmatrix}
-A_{11} & A_{21} \\
-A_{21} & A_{22}
-\end{bmatrix}
-\end{align}
-Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem.
-
-%------------------------------------------------
-
-\subsubsection{Heading on level 3 (subsubsection)}
-
-\lipsum[3] % Dummy text
-
-\paragraph{Heading on level 4 (paragraph)}
-
-\lipsum[6] % Dummy text
-
 %----------------------------------------------------------------------------------------
 %	PROBLEM 2
 %----------------------------------------------------------------------------------------
 
-\section{Lists}
+\section{Binary representation of Real Numbers}
 
-%------------------------------------------------
+If $x \in [0,1]$, then there exists a sequence $(a_n)$ of 0s and 1s such that
 
-\subsection{Example of list (3*itemize)}
-\begin{itemize}
-	\item First item in a list 
-		\begin{itemize}
-		\item First item in a list 
-			\begin{itemize}
-			\item First item in a list 
-			\item Second item in a list 
-			\end{itemize}
-		\item Second item in a list 
-		\end{itemize}
-	\item Second item in a list 
-\end{itemize}
+\begin{align} 
+\frac{a_1}{2} + \frac{a_2}{2^2} + \dots + \frac{a_n}{2^n} \leq x \leq \frac{a_1}{2} + \frac{a_2}{2^2} + \dots + \frac{a_n + 1}{2^n}
+\end{align}
 
-%------------------------------------------------
+for all $n \in \mathbb{N}$. Conversely, each sequence of 0s and 1s is the binary representation of a unique real number in $[0,1]$.\\
 
-\subsection{Example of list (enumerate)}
-\begin{enumerate}
-\item First item in a list 
-\item Second item in a list 
-\item Third item in a list
-\end{enumerate}
+\paragraph{Proof.} We begin by discussing an algorithm for constructing a sequence $(a_n)$ based on the choice $x$. We then demonstrate that the upper and lower bounds given above form a nested sequence of intervals, and since we know (by the Nested Intervals Property) that the intersection of such objects is nonempty, we can be confident that such a construction for $x$ is valid.\\
 
-%----------------------------------------------------------------------------------------
+If $x \neq \frac{1}{2}$ belongs to the left subinterval $[0,\frac{1}{2}]$ we take $a_1 = 0$, while if $x$ belongs to the right subinterval $[\frac{1}{2},1]$ we take $a_1 = 1$. If $x = \frac{1}{2}$, then we may take $a_1$ to be either 0 or 1. In any case we have
+
+\begin{align}
+\frac{a_1}{2} \leq x \leq \frac{a_1}{2} + \frac{a_2 + 1}{2^2}.
+\end{align}
+
+We continue this bisection procedure, assigning at the $n$th stage the value $a_n = 0$ if $x$ is not the bisection point and lies in the left subinterval, and assinging the value $a_n = 1$ if $x$ lies in the right subinterval. Thus, we have a well-defined sequence $(a_n)$ of 0s and 1s such that Eqn 2.1 above holds.\\
+
+Now we proceed to show that the upper and lower bounds given in Eqn 2.1 form a sequence of nested intervals. Let $L_n$ be the $n$th lower bound and $U_n$ the $n$th upper bound so that
+
+\begin{align*}
+&L_n := \sum_{1}^{n} \frac{a_i}{2^i}       &U_n := \sum_{1}^{n} \frac{a_i}{2^i} + \frac{1}{2^n}\\
+&L_{n-1} := \sum_{1}^{n-1} \frac{a_i}{2^i} &U_{n-1} := \sum_{1}^{n-1} \frac{a_i}{2^i} + \frac{1}{2^{n-1}}
+\end{align*}
+
+which yields the following useful relationships
+
+\begin{align*}
+L_n &= L_{n-1} + \frac{a_n}{2^n} \\
+U_n &= U_{n-1} - \frac{1}{2^{n-1}} + \frac{a_n}{2^n} + \frac{1}{2^n}
+\end{align*}
+
+We know that each $a_n$ is either 0 or 1, so we have two cases. If $a_n = 0$, then $\frac{a_n}{2^n} = 0$ so that $L_n = L_{n-1}$ and $U_n = U_{n-1} - \frac{1}{2^n} < U_{n-1}$. If $a_n = 1$, then $\frac{a_n}{2^n} = \frac{1}{2^n}$ so that $L_n = L_{n-1} + \frac{1}{2^n} > L_{n-1}$ and $U_n = U_{n-1} - \frac{1}{2^{n-1}} + \frac{2}{2^n} = U_{n-1}$. Thus, we have that $L_n \geq L_{n-1}$ and $U_n \leq U_{n-1}$. Therefore, for each $n \in \mathbb{N}$, we have
+
+\begin{equation}
+L_{n-1} \leq L_n < U_n \leq U_{n-1}
+\end{equation}
+
+so that the interval $[L_{n-1},U_{n-1}]$ contains the interval $[L_n,U_n]$.$\blacksquare$\\
+
 
 \end{document}
