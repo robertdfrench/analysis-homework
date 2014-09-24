@@ -235,8 +235,24 @@ We are guaranteed that $\frac{\kep}{\kep ^2 + 1}$ is positive, so
 \end{gather*}
 
 Lastly, since $n/(n^2 + 1) < \kep/(\kep ^2 + 1)$ when $n \geq \kep$, we have that $\lim(\frac{n}{n^2 + 1}) = 0$. $\blacksquare$\\
+
 \subsubsection*{Part d}
-\paragraph{Proof.} Argument. $\blacksquare$\\
+
+$\lim\left(\frac{n^2 - 1}{2n^2 + 3}\right) = \frac{1}{2}$
+
+\paragraph{Proof.} Given $\epsilon > 0$, we want to obtain the inequality
+
+\begin{equation}
+\left| \frac{n^2 - 1}{2n^2 + 3} - \frac{1}{2}\right| < \epsilon
+\end{equation}
+
+when $n$ is sufficiently large. We first simplify the expression on the left:
+
+\begin{equation*}
+\left| \frac{n^2 - 1}{2n^2 + 3} - \frac{1}{2}\right| = \left|\frac{n^2 - n^2 - 3/2}{2n^2 + 3}\right| = \frac{3/2}{2n^2 + 3} = \frac{1}{\frac{4}{3}n^2 + 2} < \frac{1}{n}.
+\end{equation*}
+
+Now if the inequality $1/n < \epsilon$ is satisfied, then the inequality 4.2 holds. Thus if $1/K < \epsilon$, then for any $n \geq K$, we also have $1/n < \epsilon$ and hence 4.2 holds. Therefore the limit of the sequence is $\frac{1}{2}$ . $\blacksquare$\\
 
 \subsection*{Exercise 3.1.6}
 \subsubsection*{Part c}
