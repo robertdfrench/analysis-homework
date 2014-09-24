@@ -142,7 +142,21 @@ so that the interval $[L_{n-1},U_{n-1}]$ contains the interval $[L_n,U_n]$.$\bla
 
 If $S \subseteq \mathbb{R}$ is a nonempty bounded set, and $I_S := [\inf S, \sup S]$, then $S \subseteq I_S$. Moreover, if $J$ is any closed bounded interval containing $S$, then $I_S \subseteq J$.\\
 
-\paragraph{Proof.} A good argument. $\blacksquare$\\
+\paragraph{Proof.} Since $\inf S \leq s \forall s \in S$, and $\sup S \geq s \forall s \in S$, we know
+
+\begin{equation}
+\inf S \leq s \leq \sup S \forall s \in S
+\end{equation}
+
+Thus, $s \in [\inf S, \sup S] \forall s \in S$, so $S \subseteq I_S$.\\
+
+Further, since $J$ is a closed bounded interval containing $S$ by hypothesis, we know that $\inf J \leq s \forall s \in S$ so that $\inf J$ is a lower bound for $S$, and we know that $\sup J \geq s \forall s \in S$ so that $\sup J$ is an upper bound for $S$. By definition of the infimum and supremum of $S$ we have that $\inf S \geq \inf J$ and $\sup S \leq \sup J$. Thus
+
+\begin{equation}
+\inf J \leq \inf S \leq \sup S \leq \sup J
+\end{equation}
+
+which confirms that $I_S \subseteq J$. $\blacksquare$\\
 
 \subsection*{Exercise 2.5.10}
 
