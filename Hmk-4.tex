@@ -297,5 +297,25 @@ We know from Part A of Exercise 3.1.5 that $\lim\left(\frac{n}{n^2 + 1}\right) =
 and thus the limit is also 0. $\blacksquare$\\
 
 \subsection*{Exercise 3.1.8}
-\paragraph{Proof.} Argument. $\blacksquare$\\
+
+Prove that $\lim(x_n) = 0$ if and only if $\lim(|x_n|) = 0$. Provide an example to show that the convergence of $(|x_n|)$ need not imply the convergence of $(x_n)$.
+
+\paragraph{Proof.} We shall demonstrate this by showing that each statement implies the other. Begin by assuming $\lim(x_n) = 0$, so that we have
+
+\begin{equation*}
+\epsilon > \left| x_n - 0 \right| = \left| x_n \right| = \left|x_n\right| - 0 = \left| \left| x_n \right| - 0 \right|
+\end{equation*}
+
+so that we have $||x_n| - 0| < \epsilon$ which implies $\lim(|x_n|) = 0$.\\
+
+Now we work the other direction. Assume that $\lim(|x_n|) = 0$, so then
+
+\begin{equation*}
+\epsilon > \left| \left|x_n\right| - 0 \right| = \left| x_n \right| - 0 = \left|x_n\right| = \left| x_n - 0 \right|
+\end{equation*}
+
+which tells us $\lim(x_n) = 0$. Since each statement implies the other, we have demonstrated their logical equivalence. $\blacksquare$\\
+
+\paragraph{Example.} Let $x_n := (-1)^n$. Then $|x_n| = 1$, so that the constant sequence $(|x_n|) = (1)$ converges. However, for any $\epsilon < 2$, there are infinitely many terms not satisfying $|x_n - L| < \epsilon$ for any proposed limit $L$.
+
 \end{document}
