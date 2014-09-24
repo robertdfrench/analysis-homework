@@ -256,8 +256,32 @@ Now if the inequality $1/n < \epsilon$ is satisfied, then the inequality 4.2 hol
 
 \subsection*{Exercise 3.1.6}
 \subsubsection*{Part c}
-\paragraph{Proof.} Argument. $\blacksquare$\\
+
+$\lim\left(\frac{\sqrt{n}}{n+1}\right) = 0$
+
+\paragraph{Proof.} Given $\epsilon > 0$, we want to obtain the inequality
+
+\begin{equation}
+\left|\frac{\sqrt{n}}{n+1} - 0\right| < \epsilon
+\end{equation}
+
+when $n$ is sufficiently large. We note that by the Archimedean Property we have that $\exists t_\epsilon$ such that $1/t_\epsilon < \epsilon$. Thus, take $\kep := t_{\epsilon}^2$ so that we have $1/\sqrt{\kep} < \epsilon$. Thus,
+
+\begin{equation*}
+\epsilon > \frac{1}{\sqrt{\kep}} = \frac{\sqrt{\kep}}{\kep} > \frac{\sqrt{\kep}}{\kep + 1}.
+\end{equation*}
+
+Lastly, since $\frac{\sqrt{\kep}}{\kep + 1} > \frac{\sqrt{n}}{n + 1}$ when $n > \kep$, we have
+
+\begin{equation*}
+\epsilon > \frac{\sqrt{n}}{n + 1} = \left|\frac{\sqrt{n}}{n + 1} - 0\right|
+\end{equation*}
+
+when $n > \kep$. Thus, the limit is 0. $\blacksquare$\\
 \subsubsection*{Part d}
+
+$\lim\left(\frac{(-1)^n n}{n^2 + 1}\right) = 0$
+
 \paragraph{Proof.} Argument. $\blacksquare$\\
 
 \subsection*{Exercise 3.1.8}
