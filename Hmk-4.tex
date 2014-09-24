@@ -282,7 +282,19 @@ when $n > \kep$. Thus, the limit is 0. $\blacksquare$\\
 
 $\lim\left(\frac{(-1)^n n}{n^2 + 1}\right) = 0$
 
-\paragraph{Proof.} Argument. $\blacksquare$\\
+\paragraph{Proof.} Given $\epsilon > 0$, we want to obtain the inequality 
+
+\begin{equation*}
+\left|\frac{(-1)^n n}{n^2 + 1} - 0\right| < \epsilon.
+\end{equation*}
+
+We know from Part A of Exercise 3.1.5 that $\lim\left(\frac{n}{n^2 + 1}\right) = 0$, and from that fact we can deduce the following:
+
+\begin{equation*}
+\epsilon > \left|\frac{n}{n^2 + 1} - 0\right| = \frac{n}{n^2 + 1} = \left|(-1)^n \frac{n}{n^2 + 1}\right| = \left|\frac{(-1)^n n}{n^2 + 1} - 0\right|.
+\end{equation*}
+
+and thus the limit is also 0. $\blacksquare$\\
 
 \subsection*{Exercise 3.1.8}
 \paragraph{Proof.} Argument. $\blacksquare$\\
