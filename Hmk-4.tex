@@ -204,8 +204,37 @@ For any $b \in \mathbb{R}$, $\lim(b/n) = 0$.
 \paragraph{Proof.} Consider first that, $\fanin$, $|b/n| \leq |b/n|$, and since $n > 0$, we can even say that $|b/n - 0| \leq |b| \cdot 1/n$. We can leverage the fact that $\lim(1/n)=0$ together with Theorem 3.1.10 (by taking $C=|b|$ and $m=1$) to conclude that $\lim(b/n)=0$ for any $b \in \mathbb{R}$. $\blacksquare$\\
 
 \subsection*{Exercise 3.1.5}
+
+Use the definition of the limit of a sequence to establish the following limits:
+
 \subsubsection*{Part a}
-\paragraph{Proof.} Argument. $\blacksquare$\\
+
+$\lim(\frac{n}{n^2 + 1}) = 0$
+
+\newcommand{\kep}{K(\epsilon)}
+\paragraph{Proof.} Choose $\epsilon > 0$, the by the Archimedean Property, $\exists \kep$ such that $\frac{1}{\kep} < \epsilon$. Clearly,
+
+\begin{equation}
+\frac{1}{\kep + \frac{1}{\kep}} < \frac{1}{\kep} < \epsilon
+\end{equation}
+
+Since $\kep \in \mathbb{N}$ by definition, we know it is nonzero, so we may employ the identity $1 = \kep/\kep$ as follows
+
+\begin{gather*}
+1\cdot\frac{1}{\kep + \frac{1}{\kep}} < \frac{1}{\kep} < \epsilon \\
+\left(\frac{\kep}{\kep}\right)\cdot\frac{1}{\kep + \frac{1}{\kep}} < \frac{1}{\kep} < \epsilon \\
+\frac{\kep}{(\kep)^2 + 1} < \frac{1}{\kep} < \epsilon \\
+\frac{\kep}{(\kep)^2 + 1} < \epsilon \\
+\end{gather*}
+
+We are guaranteed that $\frac{n}{n^2 + 1}$ is positive, so 
+
+\begin{gather*}
+\frac{\kep}{(\kep)^2 + 1} < \epsilon \\
+\left|\frac{\kep}{(\kep)^2 + 1} - 0\right| < \epsilon \\
+\end{gather*}
+
+so that $\lim(\frac{n}{n^2 + 1}) = 0$. $\blacksquare$\\
 \subsubsection*{Part d}
 \paragraph{Proof.} Argument. $\blacksquare$\\
 
