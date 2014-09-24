@@ -17,4 +17,4 @@ This repo uses the [Short Sectioned Assignment](http://www.latextemplates.com/te
 
 ### License
 
-This is available under the MIT license but... check with your professor before you turn any of it in. Also, none of this is guaranteed to be either correct or worth reading.
+This is available under the MIT license but... freeloading someone else's homework probably violates academic integrity rules. Also, none of this is guaranteed to be either correct or worth reading.
