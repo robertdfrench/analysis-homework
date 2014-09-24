@@ -162,5 +162,36 @@ which confirms that $I_S \subseteq J$. $\blacksquare$\\
 
 In the context of the proofs of Theorems 2.5.2 and 2.5.3, we have $\eta \in \cap_{n=1}^{\infty} I_n$. Also, $[\xi, \eta] = \cap_{n=1}^{\infty} I_n$.\\
 
-\paragraph{Proof.} A good argument. $\blacksquare$\\
+\paragraph{Proof.} Suppose $\eta \notin \cap_{n=1}^{\infty} I_n$. Then $\exists m | \eta \notin I_m$. By definition, $\eta \leq b_m$, so we must have that $\eta \leq a_m$. But since
+
+\begin{equation}
+a_m \leq b_k \forall k \in \mathbb{N}
+\end{equation}
+
+then $a_m$ is a greater lower bound for $\{b_k | k \in \mathbb{N}\}$ than is $\eta$. This contradicts our hypothesis that $\eta = \inf \{b_n | n \in \mathbb{N}\}$. Thus, $\eta \in \cap_{n=1}^{\infty} I_n$.\\
+
+We now show that $[\xi, \eta] = \cap_{n=1}^{\infty} I_n$. We begin by showing $[\xi, \eta] \subseteq \cap_{n=1}^{\infty} I_n$. Take $x \in [\xi, \eta]$, then $x \geq a_n \forall n$, since $x \geq \xi = \sup \{a_n | n \in \mathbb{N}\}$. Also, $x \leq b_n \forall n \in \mathbb{N}$, since $x \leq \eta = \inf \{b_n | n \in \mathbb{N}\}$. Thus,
+
+\begin{equation}
+a_n \leq x \leq b_n
+\end{equation}
+
+without regard to the choice of $n$. Thus, $x \in I_n \forall n \in \mathbb{N}$, so $x \in \cap_{n=1}^{\infty} I_n$. Thus, $[\xi, \eta] \subseteq \cap_{n=1}^{\infty} I_n$.
+
+\newcommand{\xieta}{[\xi,\eta]}
+\newcommand{\capin}{\cap_{n=1}^{\infty} I_n}
+\newcommand{\fanin}{\forall n \in \mathbb{N}}
+In order to establish that $\xieta = \capin$, we are now obliged to show that $\capin \subseteq \xieta$. Take $x \in \capin$, we know that $x \in [a_n, b_n] \fanin$, which means
+
+\begin{equation}
+a_n \leq x \leq b_n \fanin
+\end{equation}
+
+Thus $x$ is an upper bound for the set $\{a_n | n \in \mathbb{N}\}$ and a lower bound for $\{b_n | n \in \mathbb{N}\}$. This tells us that
+
+\begin{equation}
+a_n \leq \xi \leq x \leq \eta \leq b_n \fanin
+\end{equation}
+
+so that $x \in \xieta$. $\blacksquare$\\
 \end{document}
