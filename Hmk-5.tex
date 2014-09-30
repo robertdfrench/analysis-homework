@@ -81,18 +81,14 @@
 
 \pf By the definition of limit, for each positive $\epsilon$ such an $M(\epsilon)$ can be found. Thus, take $\epsilon$ to be smaller than $x$, so that $x_n \in V_\epsilon (x) = (x - \epsilon, x + \epsilon)$ whenever $n \geq M$. Since $\epsilon < x$, $x - \epsilon \in \mathbb{P}$ so $x_n > 0$.\done
 
+\necommand{\nin}{n \in \mathbb{N}}
+\newcommand{\fanin}{\forall n \in \mathbb{N}}
 %%%%% Problem 3.1.14
 \prob{14} Let $b \in \mathbb{R}$ satisfy $0 < b < 1$. Show that $\lim(nb^n) = 0$.
 
-\pf We first begin by proving the following Lemma: If $(k_n)^2 \rightarrow 0$ and $k_n < 0$, then $k_n \rightarrow 0$.\\
+\pf We know that $n^{1/n} > 1$ $\fanin$. This implies that $n^{1/n} = 1 + k_n$ for some $k_n > 0$, so that we have $bn^{1/n} = b + b k_n$.Thus, $nb^n = (b + b k_n)^n$.\\
 
-By hypothesis, given an $\epsilon > 0$, there exists some $M(\epsilon) \in \mathbb{N}$ such that  $|(k_n)^2 - 0| < \epsilon$ whenever $n \geq M(\epsilon)$. Further, $|(k_n)^2 - 0|$ = $\left| \left| k_n \right| \cdot \left| k_n \right| \right|$ = $|k_n|^2$ so that we have $|k_n| < \sqrt{\epsilon}$. Since the absolute value of $k_n$ is smaller than any arbitrary positive number, and we know that $k_n$ < 0 for all choices of $n$, we have that $k_n \rightarrow 0$.\\
-
-Now we may proceed with the main portion of our argument. Since $b \in (0,1)$, we may define a sequence $(k_n)$ such that $b^{1/n} = 1 + k_n$ for some $k_n < 0$. This implies that $b = (1 + k_n)^n$.\\
-
-The Binomial Theorem tells us that $b = 1 + n k_n + \frac{1}{2} n (n-1) (k_n)^2 + \cdots \geq 1 + \frac{1}{2} n (n-1) (k_n)^2$, so we have that $b - 1 \geq \frac{1}{2} n (n-1) (k_n)^2$. Thus, $\frac{2b - 2}{n(n-1)} \geq (k_n)^2$.\\
-
-We know from previous work that $\frac{1}{n(n-1)} \rightarrow 0$, and since $\frac{2b - 2}{n(n-1)}$ is a constant times a convergent expression, we know that its limit is zero as well. Since $(k_n)^2$ is bounded above by a sequence which converges to zero, and below by the constant sequence $(0)$, we have that $(k_n)^2 \rightarrow 0$. Thus, by our earlier Lemma, $k_n$ converges to 0. \done
+By the Binomial Theorem we know that $(b + b k_n)^n = b^n + n b^{n-1} b k_n + \frac{1}{2} n (n - 1) b^{n - 2} b^2 {k_n}^2 + \cdots$\done
 
 %%%%% Problem 3.1.17
 \prob{17}
