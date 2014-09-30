@@ -1,0 +1,93 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Short Sectioned Assignment
+% LaTeX Template
+% Version 1.0 (5/5/12)
+%
+% This template has been downloaded from:
+% http://www.LaTeXTemplates.com
+%
+% Original author:
+% Frits Wenneker (http://www.howtotex.com)
+%
+% License:
+% CC BY-NC-SA 3.0 (http://creativecommons.org/licenses/by-nc-sa/3.0/)
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%----------------------------------------------------------------------------------------
+%	PACKAGES AND OTHER DOCUMENT CONFIGURATIONS
+%----------------------------------------------------------------------------------------
+
+\documentclass[paper=a4, fontsize=11pt]{scrartcl} % A4 paper and 11pt font size
+
+\usepackage[T1]{fontenc} % Use 8-bit encoding that has 256 glyphs
+\usepackage{fourier} % Use the Adobe Utopia font for the document - comment this line to return to the LaTeX default
+\usepackage[english]{babel} % English language/hyphenation
+\usepackage{amsmath,amsfonts,amsthm} % Math packages
+
+\usepackage{lipsum} % Used for inserting dummy 'Lorem ipsum' text into the template
+
+\usepackage{sectsty} % Allows customizing section commands
+\allsectionsfont{\centering \normalfont\scshape} % Make all sections centered, the default font and small caps
+
+\usepackage{fancyhdr} % Custom headers and footers
+\pagestyle{fancyplain} % Makes all pages in the document conform to the custom headers and footers
+\fancyhead{} % No page header - if you want one, create it in the same way as the footers below
+\fancyfoot[L]{} % Empty left footer
+\fancyfoot[C]{} % Empty center footer
+\fancyfoot[R]{\thepage} % Page numbering for right footer
+\renewcommand{\headrulewidth}{0pt} % Remove header underlines
+\renewcommand{\footrulewidth}{0pt} % Remove footer underlines
+\setlength{\headheight}{13.6pt} % Customize the height of the header
+
+\numberwithin{equation}{section} % Number equations within sections (i.e. 1.1, 1.2, 2.1, 2.2 instead of 1, 2, 3, 4)
+\numberwithin{figure}{section} % Number figures within sections (i.e. 1.1, 1.2, 2.1, 2.2 instead of 1, 2, 3, 4)
+\numberwithin{table}{section} % Number tables within sections (i.e. 1.1, 1.2, 2.1, 2.2 instead of 1, 2, 3, 4)
+
+\setlength\parindent{0pt} % Removes all indentation from paragraphs - comment this line for an assignment with lots of text
+
+%----------------------------------------------------------------------------------------
+%	TITLE SECTION
+%----------------------------------------------------------------------------------------
+
+\newcommand{\horrule}[1]{\rule{\linewidth}{#1}} % Create horizontal rule command with 1 argument of height
+
+\title{	
+\normalfont \normalsize 
+\textsc{University of Tennessee \\ Department of Mathematics} \\ [25pt] % Your university, school and/or department name(s)
+\horrule{0.5pt} \\[0.4cm] % Thin top horizontal rule
+\huge MATH 447 - Homework 5 \\ % The assignment title
+\horrule{2pt} \\[0.5cm] % Thick bottom horizontal rule
+}
+
+\author{Robert D. French} % Your name
+
+\date{\normalsize\today} % Today's date or a custom date
+
+\begin{document}
+
+\maketitle % Print the title
+
+%----------------------------------------------------------------------------------------
+%	PROBLEM 1
+%----------------------------------------------------------------------------------------
+
+\section*{Section 3.1}
+
+\paragraph{Problem 10.} Prove that if $\lim(x_n) = 0$ and if $x > 0$, then there exists a natural number $M$ such that $x_n > 0$ for all $n \geq M$.
+
+\paragraph{Proof.} By the definition of limit, for each positive $\epsilon$ such an $M(\epsilon)$ can be found. Thus, take $\epsilon$ to be smaller than $x$, so that $x_n \in V_\epsilon (x) = (x - \epsilon, x + \epsilon)$ whenever $n \geq M$. Since $\epsilon < x$, $x - \epsilon \in \mathbb{P}$ so $x_n > 0$. $\blacksquare$
+
+\paragraph{Problem 14.} Let $b \in \mathbb{R}$ satisfy $0 < b < 1$. Show that $\lim(nb^n) = 0$.
+
+\paragraph{Proof.} We first begin by proving the following Lemma: If $(k_n)^2 \rightarrow 0$ and $k_n < 0$, then $k_n \rightarrow 0$.\\
+
+By hypothesis, given an $\epsilon > 0$, there exists some $M(\epsilon) \in \mathbb{N}$ such that  $|(k_n)^2 - 0| < \epsilon$ whenever $n \geq M(\epsilon)$. Further, $|(k_n)^2 - 0|$ = $\left| \left| k_n \right| \cdot \left| k_n \right| \right|$ = $|k_n|^2$ so that we have $|k_n| < \sqrt{\epsilon}$. Since the absolute value of $k_n$ is smaller than any arbitrary positive number, and we know that $k_n$ < 0 for all choices of $n$, we have that $k_n \rightarrow 0$.\\
+
+Now we may proceed with the main portion of our argument. Since $b \in (0,1)$, we may define a sequence $(k_n)$ such that $b^{1/n} = 1 + k_n$ for some $k_n < 0$. This implies that $b = (1 + k_n)^n$.\\
+
+The Binomial Theorem tells us that $b = 1 + n k_n + \frac{1}{2} n (n-1) (k_n)^2 + \cdots \geq 1 + \frac{1}{2} n (n-1) (k_n)^2$, so we have that $b - 1 \geq \frac{1}{2} n (n-1) (k_n)^2$. Thus, $\frac{2b - 2}{n(n-1)} \geq (k_n)^2$.\\
+
+We know from previous work that $\frac{1}{n(n-1)} \rightarrow 0$, and since $\frac{2b - 2}{n(n-1)}$ is a constant times a convergent expression, we know that its limit is zero as well. Since $(k_n)^2$ is bounded above by a sequence which converges to zero, and below by the constant sequence $(0)$, we have that $(k_n)^2 \rightarrow 0$. Thus, by our earlier Lemma, $k_n$	
+
+\end{document}
