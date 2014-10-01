@@ -130,7 +130,28 @@ Take $b = 2/3$ and $n = m - 2$, then by Exercise 3.1.14 we know $nb^n \rightarro
 \section*{Section 3.2}
 %%%%% Problem 3.2.7
 \prob{7} If $(b_n)$ is a bounded sequence and $\lim(a_n) = 0$, show that $\lim(a_n b_n) = 0$. Explain why Thm 3.2.3 cannot be used.
-\pf
+
+\paragraph{Remark.} We may not apply Theorem 3.2.3 directly because it requires that $(b_n)$ is convergent, but we know only that $(b_n)$ is bounded. However, we may employ Theorem 3.2.3 for certain features of our argument.
+
+\pf Since $(b_n)$ is bounded, we have
+
+\begin{equation*}
+I_b = \inf(b_n) \leq b_j \leq \sup(b_n) = S_b ~ \forall j \in \mathbb{N}
+\end{equation*}
+
+which implies
+
+\begin{equation*}
+I_b |a_j|  = \inf(b_n) |a_j| \leq b_j \cdot |a_j| \leq \sup(b_n) \cdot |a_j| = S_b \cdot |a_j| ~ \forall j \in \mathbb{N}
+\end{equation*}
+
+Thus if $\inf(b_n)|a_j| \rightarrow 0$ and $\sup(b_n) |a_j| \rightarrow 0$, we will be confident that $b_j |a_j| \rightarrow 0$.\\
+
+Since $\inf(b_n)$ and $\sup(b_n)$ are constants, and since we know $|a_j| \rightarrow 0$ due to the fact that $a_j \rightarrow 0$, we have that $\inf(b_n) |a_j| \rightarrow 0$ and $\sup(b_n) |a_j| \rightarrow 0$ by Theorem 3.2.3. Thus, $b_j \cdot |a_j| \rightarrow 0$.\\
+
+Therefore, given $\epsilon > 0$, we know $\exists K(\epsilon)$ such that $\left| b_j \cdot |a_j| - 0 \right| < \epsilon ~ \forall j \geq K(\epsilon)$.\\
+
+What we want to show is that $|b_j \cdot a_j - 0| < \epsilon ~ \forall j \geq M(\epsilon)$. By the above work, we know $|b_j \cdot |a_j| - 0| < \epsilon$ which tells us that $|b_j \cdot \a_j - 0| < \epsilon$ and thereforce $\lim(a_n b_n) = 0$. \done
 
 %%%%% Problem 3.2.9
 \prob{9} Let $y_n := \sqrt{n+1} - \sqrt{n}$ for $n \in \mathbb{N}$. Show that $(\sqrt{n} y_n)$ converges. Find the limit.
