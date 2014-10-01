@@ -273,7 +273,13 @@ so we know that $\sqrt{(n+a)(n+b)} > n$. Thus,
 Also, consider that $n > 1^{n^2}$. This lets us know that $n^{1/n^2} > 1$. Therefore $1 \leq n^{1/n^2} \leq n^{1/n}$ for all sufficiently large $n$, and since $n^{1/n} \rightarrow 1$, we may employ the Squeeze Theorem to assert that $n^{1/n^2} \rightarrow 1$. \done
 
 \subprob{Part B} Use the Squeeze Theorem to find $\lim((n!)^{1/n^2})$.
-\pf
+\pf Well, $n^{1/n^2} \leq (n!)^{1/n^2}$ since $n \leq n! ~ \forall n$. We alos know that $(n!)^{1/n^2} \leq (n!)^{1/n}$ since $n! \leq (n!)^n ~ \forall n$. Moreover, since $n! \leq n^n$, we know $\sqrt[n]{n!} \leq n$. This implies $(n!)^{1/n} \leq n$ which in turn asserts that $(n!)^{1/n^2} \leq n^{1/n}$. Therefore we have
+
+\begin{equation*}
+n^{1/n^2} \leq (n!)^{1/n^2} \leq n^{1/n}
+\end{equation*}
+
+and since $n^{1/n^2} \rightarrow 1$ and $n^{1/n} \rightarrow 1$, we know by the Squeeze Theorem that $ (n!)^{1/n^2} \rightarrow 1$. \done
 
 %%%%% Problem 3.2.15
 \prob{15} Show that if $z_n := (a^n + b^n)^{1/n}$ where $0 < a < b$, then $\lim(z_n) = b$.
