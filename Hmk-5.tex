@@ -124,7 +124,8 @@ Take $b = 2/3$ and $n = m - 2$, then by Exercise 3.1.14 we know $nb^n \rightarro
 
 %%%%% Problem 3.1.18
 \prob{18} If $\lim(x_n) = x > 0$, show that there exists a natural number $K$ such that if $n \geq K$, then $\frac{1}{2}x < x_n < 2x$.
-\pf
+
+\pf Pick $\epsilon < \frac{1}{2} x$, then by the definition of limit $\exists K$ such that $x_n \in V_\epsilon(x) \forall n \geq K$. Since $V_\epsilon(x) = (x - x/2, x + x/2) = (x/2, 3x/2)$, we know $V_\epsilon(x) \subseteq (x/2, 2x)$, demonstrating that such a $K$ exists. \done
 
 \section*{Section 3.2}
 %%%%% Problem 3.2.7
