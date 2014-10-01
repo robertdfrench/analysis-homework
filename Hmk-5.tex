@@ -114,7 +114,7 @@ Now assume that $0 < \frac{2^{n-1}}{(n-1)!} \leq 2\left(\frac{2}{3}\right)^{n-3}
 0 < \frac{2^n}{(n-1)!} \cdot \frac{1}{n} = \frac{2^n}{n!} \leq 2 \cdot \left(\frac{2^{n-2}}{3^{n-3}}\right) \cdot \frac{1}{3} = 2 \left( \frac{2}{3} \right)^{n-2} 
 \end{equation*}
 
-whence $0 < \frac{2^n}{n!} \leq 2\left(\frac{2}{3}\right)^{n-2}$. Therefore the hypothesis holds by the Principal of Mathematical Inducation. \done
+whence $0 < \frac{2^n}{n!} \leq 2\left(\frac{2}{3}\right)^{n-2}$. Therefore the hypothesis holds by the Principal of Mathematical Induction. \done
 
 \subprob{Main Problem} Show that $\lim(2^n/n!) = 0$.
 
@@ -151,7 +151,7 @@ Since $\inf(b_n)$ and $\sup(b_n)$ are constants, and since we know $|a_j| \right
 
 Therefore, given $\epsilon > 0$, we know $\exists K(\epsilon)$ such that $\left| b_j \cdot |a_j| - 0 \right| < \epsilon ~ \forall j \geq K(\epsilon)$.\\
 
-What we want to show is that $|b_j \cdot a_j - 0| < \epsilon ~ \forall j \geq M(\epsilon)$. By the above work, we know $|b_j \cdot |a_j| - 0| < \epsilon$ which tells us that $|b_j \cdot |a_j - 0| < \epsilon$ and thereforce $\lim(a_n b_n) = 0$. \done
+What we want to show is that $|b_j \cdot a_j - 0| < \epsilon ~ \forall j \geq M(\epsilon)$. By the above work, we know $|b_j \cdot |a_j| - 0| < \epsilon$ which tells us that $|b_j \cdot |a_j - 0| < \epsilon$ and therefore $\lim(a_n b_n) = 0$. \done
 
 %%%%% Problem 3.2.9
 \prob{9} Let $y_n := \sqrt{n+1} - \sqrt{n}$ for $n \in \mathbb{N}$. Show that $(\sqrt{n} y_n)$ converges. Find the limit.
@@ -293,7 +293,9 @@ $(b^n)^{1/n} = b$ by definition. $(b^n + b^n)^{1/n} = (2b^n)^{1/n} = \sqrt[n]{2}
 
 %%%%% Problem 3.2.23
 \prob{23} Show that if $(x_n)$ and $(y_n)$ are convergent sequences, then the sequences $(u_n)$ and $(v_n)$ defined by $u_n := \max\{x_n, y_n\}$ and $v_n := \min\{x_n, y_n\}$ are also convergent.
-\pf By definition, $\max\{x_n, y_n\} = \frac{1}{2}(x_n + y_n + |x_n - y_n|)$. Thus, because sums, differences, absolute values, and scalar multiples of convergent sequences are themselves convergent, we have that $\max\{x_n, y_n\}$ converges. \done
+\pf By definition, $\max\{x_n, y_n\} = \frac{1}{2}(x_n + y_n + |x_n - y_n|)$. Thus, because sums, differences, absolute values, and scalar multiples of convergent sequences are themselves convergent, we have that $\max\{x_n, y_n\}$ converges.\\
+
+Likewise, $\min\{x_n, y_n\} =  \frac{1}{2}(x_n + y_n - |x_n - y_n|)$, which is again a composition of operations known to map convergent sequences to convergent sequences. Thus, $\min\{x_n, y_n\}$ is itself convergent. \done
 
 %%%%% Problem 3.2.24
 \prob{24} Show that if $(x_n)$, $(y_n)$, $(z_n)$ are convergent sequences, then the sequence $(w_n)$ defined by $w_n := \text{mid}\{x_n, y_n, z_n\}$ is also convergent.
