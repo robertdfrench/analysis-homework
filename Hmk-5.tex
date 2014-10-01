@@ -268,7 +268,10 @@ so we know that $\sqrt{(n+a)(n+b)} > n$. Thus,
 %%%%% Problem 3.2.14
 \prob{14}
 \subprob{Part A} Use the Squeeze Theorem to find $\lim(n^{1/n^2})$.
-\pf
+\pf We know from earlier work that $\lim(n^{1/n}) = 1$. We can infer from this that $n > n^{1/n}$ for sufficiently large values of $n$. This implies that $n^{1/n} > n^{1/n^2}$.\\
+
+Also, consider that $n > 1^{n^2}$. This lets us know that $n^{1/n^2} > 1$. Therefore $1 \leq n^{1/n^2} \leq n^{1/n}$ for all sufficiently large $n$, and since $n^{1/n} \rightarrow 1$, we may employ the Squeeze Theorem to assert that $n^{1/n^2} \rightarrow 1$. \done
+
 \subprob{Part B} Use the Squeeze Theorem to find $\lim((n!)^{1/n^2})$.
 \pf
 
