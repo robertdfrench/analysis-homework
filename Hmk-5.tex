@@ -283,13 +283,19 @@ and since $n^{1/n^2} \rightarrow 1$ and $n^{1/n} \rightarrow 1$, we know by the 
 
 %%%%% Problem 3.2.15
 \prob{15} Show that if $z_n := (a^n + b^n)^{1/n}$ where $0 < a < b$, then $\lim(z_n) = b$.
-\pf
+\pf We begin by noting that since $a < b$, we have
+
+\begin{equation*}
+(b^n)^{1/n} \leq (a^n + b^n)^{1/n} \leq (b^n + b^n)^{1/n}
+\end{equation*}
+
+$(b^n)^{1/n} = b$ by definition. $(b^n + b^n)^{1/n} = (2b^n)^{1/n} = \sqrt[n]{2} b$. Since $sqrt[n]{2} \rightarrow 1$, we know that $\sqrt[n]{2} b \rightarrow b$. Thus, $z_n$ is bounded above and below by sequences that converge to $b$, so by the Sandwich Theorem, $z_n \rightarrow b$. \done
 
 %%%%% Problem 3.2.23
 \prob{23} Show that if $(x_n)$ and $(y_n)$ are convergent sequences, then the sequences $(u_n)$ and $(v_n)$ defined by $u_n := \max\{x_n, y_n\}$ and $v_n := \min\{x_n, y_n\}$ are also convergent.
-\pf
+\pf By definition, $\max\{x_n, y_n\} = \frac{1}{2}(x_n + y_n + |x_n - y_n|)$. Thus, because sums, differences, absolute values, and scalar multiples of convergent sequences are themselves convergent, we have that $\max\{x_n, y_n\}$ converges. \done
 
 %%%%% Problem 3.2.24
 \prob{24} Show that if $(x_n)$, $(y_n)$, $(z_n)$ are convergent sequences, then the sequence $(w_n)$ defined by $w_n := \text{mid}\{x_n, y_n, z_n\}$ is also convergent.
-\pf
+\pf By definition, the mid function is a composition of min and max functions. In the previous problem we showed that min and max of convergent sequences are convergent themselves, so we may apply this argument iteratively to demonstrate that $w_n$ converges as well. \done
 \end{document}
