@@ -151,16 +151,56 @@ Since $\inf(b_n)$ and $\sup(b_n)$ are constants, and since we know $|a_j| \right
 
 Therefore, given $\epsilon > 0$, we know $\exists K(\epsilon)$ such that $\left| b_j \cdot |a_j| - 0 \right| < \epsilon ~ \forall j \geq K(\epsilon)$.\\
 
-What we want to show is that $|b_j \cdot a_j - 0| < \epsilon ~ \forall j \geq M(\epsilon)$. By the above work, we know $|b_j \cdot |a_j| - 0| < \epsilon$ which tells us that $|b_j \cdot \a_j - 0| < \epsilon$ and thereforce $\lim(a_n b_n) = 0$. \done
+What we want to show is that $|b_j \cdot a_j - 0| < \epsilon ~ \forall j \geq M(\epsilon)$. By the above work, we know $|b_j \cdot |a_j| - 0| < \epsilon$ which tells us that $|b_j \cdot |a_j - 0| < \epsilon$ and thereforce $\lim(a_n b_n) = 0$. \done
 
 %%%%% Problem 3.2.9
 \prob{9} Let $y_n := \sqrt{n+1} - \sqrt{n}$ for $n \in \mathbb{N}$. Show that $(\sqrt{n} y_n)$ converges. Find the limit.
-\pf
+
+\pf We want to show that there exists (and we can find) some $L$ such that given $\epsilon > 0$, $|\sqrt{n+1} - \sqrt{n} - L| < \epsilon$. Using the Ratio Test,
+
+\begin{equation*}
+\frac{y_{n+1}}{y_n} = \frac{\sqrt{n+2} - \sqrt{n+1}}{\sqrt{n+1} - \sqrt{n}}
+\end{equation*}
+
+we consider the conjugate of $y_{n+1}$
+
+\begin{equation*}
+\frac{y_{n+1}}{y_n} = \frac{\sqrt{n+2} - \sqrt{n+1}}{\sqrt{n+1} - \sqrt{n}} \left( \frac{\sqrt{n+2} + \sqrt{n+1}}{\sqrt{n+2} + \sqrt{n+1}} \right)
+\end{equation*}
+
+In this case, the numerator simplifies to $1$, while the denominator resolves to the following expression which we call $\phi_n$:
+
+\begin{equation*}
+\phi_n = \sqrt{n+1}\left(\sqrt{n+2} + \sqrt{n+1} - 1\right) - \sqrt{n}(\sqrt{n+2})
+\end{equation*}
+
+Our immediate goal is to show that $\frac{y_{n+1}}{y_n} = 1/\phi_n$ converges. Well, we know $\sqrt{n+1} > \sqrt{n}$, and since $\sqrt{n+1} - 1$ is positive, we know that $\sqrt{n+2} + \sqrt{n+1} - 1 > \sqrt{n+2}$. Multiplying these two facts gives us
+
+\begin{equation*}
+\sqrt{n+1}(\sqrt{n+2} + \sqrt{n+1} - 1) > \sqrt{n}\sqrt{n+2}
+\end{equation*}
+
+By definition, subtracting the right hand side of the above inequality from the left yields a positive number, and since this difference is exactly $\phi_n$, we know that $\phi_n > 0$.\\
+
+By the Archimedean Property, we know that for each $\nin$ there is a least $M > \phi_n$ so that $K = M - 1 \leq \phi_n$. Thus, $1/K \geq 1/\phi_n$. Since $\phi_n > 0$, we know $1/n \geq 1/\phi_n > 0$ when $n \geq K$ so that $1/\phi_n \rightarrow 0$. Since $0<1$, we know by the ratio test that $y_n$ converges and $\lim(y_n) = 0$.\done
 
 %%%%% Problem 3.2.11
 \prob{11}
 \subprob{Part A} Find $\lim\left((3\sqrt{n})^{1/2n}\right)$
-\pf
+\pf We know that $\sqrt[n]{3\sqrt{n}} > 0$ since the domain function $3 \sqrt{n} > 0$. So if $\sqrt[n]{3\sqrt{n}}$ can be shown to converge to $L_1$, then $\sqrt{\sqrt[n]{3\sqrt{n}}} \rightarrow L_0 = \sqrt{L_1}$.
+
+\begin{equation*}
+\sqrt[n]{3 \sqrt{n}} = (3 \sqrt{n})^{1/n} = 3^{1/n} \sqrt{n}^{1/n} = 3^{1/n} n^{1/2n} = 3^{1/n} \sqrt{n^{1/n}}
+\end{equation*}
+
+If $3^{1/n}$ and $\sqrt{n^{1/n}}$ can be shown to converge to $L_3$ and $L_2$ respectively, then $L_1 = L_3 \cdot L_2$, so this is our goal.\\
+
+Since $n^{1/n} > 0$ and we have shown by earlier work that $n^{1/n} \rightarrow 1$, then by Theorem 3.2.10 we have that $\sqrt{n^{1/n}} \rightarrow \sqrt{1}$ or rather $L_2 = 1$.\\
+
+Since $1 < 3 < n$ whenever $n \geq 3$, we know that $1^{1/n} < 3^{1/n} < n^{1/n}$ whenever $n \geq 3$. Thus, since $n^{1/n} \rightarrow 1$, we have that $3^{1/n} \rightarrow 1$, so $L_3 = 1$.\\
+
+Thus, $L_1 = L_3 L_2 = 1 \cdot 1 = 1$, so that $L_0 = \sqrt{L_1} = \sqrt{1} = 1$. Thus, $\lim\left((3\sqrt{n})^{1/2n}\right) = 1$. \done
+
 \subprob{Part B} Find $(\sqrt{n^2 + 5n} - n)$
 \pf
 
@@ -168,11 +208,62 @@ What we want to show is that $|b_j \cdot a_j - 0| < \epsilon ~ \forall j \geq M(
 \newcommand{\anp}{a^{n+1}}
 \newcommand{\bnp}{b^{n+1}}
 \prob{12} If $0 < a < b$, determine $\left(\frac{\anp + \bnp}{a^n + b^n}\right)$.
-\pf
+\pf First note that
+
+\begin{equation*}
+\left(\frac{\anp + \bnp}{a^n + b^n}\right) = 
+\left(\frac{\anp}{a^n + b^n} + \frac{\bnp}{a^n + b^n}\right) = 
+a \left(\frac{a^n}{a^n + b^n}\right) + b \left(\frac{b^n}{a^n + b^n}\right) 
+\end{equation*}
+
+and since $a^n + b^n = a^n(1 + (b/a)^n) = b^n((a/b)^n + 1)$ we can write 
+
+\begin{equation*}
+\left(\frac{\anp + \bnp}{a^n + b^n}\right) = 
+a \left(\frac{1}{1 + (b/a)^n}\right) + b \left(\frac{1}{(a/b)^n + 1}\right) 
+\end{equation*}
+
+which encourages us to focus our discussion on $(b/a)^n$ and $(a/b)^n$.\\
+
+Since $b > a > 0$, we know that $b/a > 1$ so that $(b/a)^n + 1$ is unbounded. The Archimedean Property guarantees us an $M$ bigger than $(b/a)^n + 1$, so that $1/M > \frac{1}{(b/a)^n + 1}$ for all sufficiently large $n$. Thus $\frac{1}{(b/a)^n + 1} \rightarrow 0$ and so does $\frac{a}{(b/a)^n + 1}$ since it is a constant multiple.\\
+
+Knowing that $b > a > 0$ also tells us that $a/b < 1$ so that $a/b \in (0,1)$. We know from earlier work that $\lim(nc^n) = 0$ when $c \in (0,1)$, and since $(a/b)^n < n(a/b)^n$ for all $n$, we have that $\lim((a/b)^n) = 0$ as well. Thus, $\lim(\frac{b}{(a/b)^n + 1}) = b$.\\
+
+Since we have expressed our original sequence in terms of the sum of two convergent sequences, we have that 
+
+\begin{equation*}
+\lim\left(\frac{\anp + \bnp}{a^n + b^n}\right) = b ~ \blacksquare
+\end{equation*}
 
 %%%%% Problem 3.2.13
 \prob{13} If $a > 0$, $b > 0$, show that $\lim\left(\sqrt{(n+a)(n+b)} - n\right) = (a + b)/2$.
-\pf
+\pf Consider multiplying by a conjugate:
+
+\begin{gather*}
+\sqrt{(n+a)(n+b)} - n \\
+(\sqrt{(n+a)(n+b)} - n)\left(\frac{\sqrt{(n+a)(n+b)} + n}{\sqrt{(n+a)(n+b)} + n}\right)\\ 
+\frac{(n+a)(n+b) - n^2}{\sqrt{(n+a)(n+b)} + n}\\ 
+\frac{n(a+b) + ab}{\sqrt{(n+a)(n+b)} + n}\\
+\frac{n(a+b)}{\sqrt{(n+a)(n+b)} + n} + \frac{ab}{\sqrt{(n+a)(n+b)} + n}
+\end{gather*}
+
+We note that the second term $(ab)/(\sqrt{(n+a)(n+b)} + n)$ has a fixed numerator and an unbounded denominator, so the Archimedean Property affirms that the quotient will tend towards zero. Thus we break apart the first term into
+
+\begin{equation*}
+\frac{n(a+b)}{\sqrt{(n+a)(n+b)} + n} = \frac{na}{\sqrt{(n+a)(n+b)} + n} + \frac{nb}{\sqrt{(n+a)(n+b)} + n}
+\end{equation*}
+
+We note that since $na$, $nb$, and $ab$ are all positive, we have
+
+\begin{equation*}
+n^2 + na + nb + ab > n^2
+\end{equation*}
+
+so we know that $\sqrt{(n+a)(n+b)} > n$. Thus,
+
+\begin{equation*}
+\frac{na}{\sqrt{(n+a)(n+b)} + n} + \frac{nb}{\sqrt{(n+a)(n+b)} + n} \leq \frac{na}{2n} + \frac{nb}{2n} = \frac{a + b}{2}
+\end{equation*}
 
 %%%%% Problem 3.2.14
 \prob{14}
