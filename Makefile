@@ -1,3 +1,9 @@
+Hmk-6: Hmk-6.pdf
+	open Hmk-6.pdf
+
+Hmk-6.pdf: Hmk-6.tex
+	texi2pdf Hmk-6.tex
+
 Hmk-5: Hmk-5.pdf
 	open Hmk-5.pdf
 
