@@ -124,6 +124,29 @@ x^* + 1 = \sqrt{x^* - 1}\\
 {x^*}^2 - 3x^* + 2 = 0
 \end{gather*}
 
-The solutions of the final quadratic equation are 1 and 2, however, since 2 is a lower bound for $(x_n)$, we know its limit may not be 1. Thus, $\lim(x_n) = 2$.
+The solutions of the final quadratic equation are 1 and 2, however, since 2 is a lower bound for $(x_n)$, we know its limit may not be 1. Thus, $\lim(x_n) = 2$.\done
+
+\section*{Section 3.3, Ex. 4}
+
+Let $x_1 := 1$ and $x_{n+1} := \sqrt{2 + x_n}$ for $\nin$. Show that $(x_n)$ converges and find the limit.
+
+\pf $x_2 = \sqrt{3} < 2$, so we know that $x_1$ and $x_2$ are both less than 2. Assume $x_n < 2$, then
+
+\begin{gather*}
+x_n < 2\\
+x_n + 2< 2 + 2\\
+\sqrt{x_n + 2} < \sqrt{4}\\
+x_{n+1} = \sqrt{x_n + 2} < 2\\
+\end{gather*}
+
+so by induction we have that $(x_n)$ is increasing and bounded above by 2. Since it is recursively defined, we may acknowledge that $\lim(x_n) = \lim(x_{n+1})$ and call that value $x^*$.
+
+\begin{gather*}
+x^* = \sqrt{2 + x^*}\\
+(x^*)^2 = 2 + x*\\
+(x^*)^2 - x* - 2 = 0\\
+\end{gather*}
+
+so that solving with the quadratic formula gives us $x^* = 2$. \done
 
 \end{document}
