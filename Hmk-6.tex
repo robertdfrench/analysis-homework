@@ -175,4 +175,19 @@ p > 0\\
 \end{gather*}
 
 and since $y_n > 0$, it is clear that $y^* = \frac{1 + \sqrt{1 + 4p}}{2}$.\done
+
+\section*{Section 3.3, Ex. 9}
+
+Let $A$ be an infinite subset of $\mathbb{R}$ that is bounded above and let $u := \sup A$. Show there exists an increasing sequence $(x_n)$ with $x_n \in A ~ \fanin$ such that $u = \lim(x_n)$.
+
+\pf By the Supremum Principle, for all $\epsilon > 0$, $\exists x_\epsilon \in A$ such that $u \geq x_\epsilon > x - \epsilon$. Pick some decreasing sequence of $(\epsilon_n)$ that converges to zero, and then $(x_n) = ({x_\epsilon}_n)$. \done
+
+\section*{Section 3.3, Ex. 11}
+
+Let $x_n := 1/1^1 + 1/2^2 + \cdots + 1/n^2$ for each $\nin$. Prove that $(x_n)$ is increasing and bounded, and hence converges.
+
+\pf We want to show that $(x_n)$ is increasing. First note that $(x_n)$ is a sum of positive terms, it is positive. Thus, since $x_{n+1} = x_n + 1/(n+1)^2$, it is clear that $(x_n)$ is increasing.\\
+
+The book tells us that $1/k^2 \leq 1/k(k-1) = 1/(k-1) - 1/k$ when $k \geq 2$. Noting that $x_k - x_{k-1} = 1/k^2$ and also that $\lim(1/k^2) = 0$, we have that $\lim(x_k - x_{k-1}) = 0$. This tells us that for large enough $k$, we have $|x_k - x_{k-1}| < \epsilon$, so by the Cauchy Criterion $(x_n)$ converges. This infers that it is bounded above. \done
+
 \end{document}
