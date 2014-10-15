@@ -56,7 +56,7 @@
 \normalfont \normalsize 
 \textsc{University of Tennessee \\ Department of Mathematics} \\ [25pt] % Your university, school and/or department name(s)
 \horrule{0.5pt} \\[0.4cm] % Thin top horizontal rule
-\huge MATH 447 - Homework ? \\ % The assignment title
+\huge MATH 447 - Homework 6 \\ % The assignment title
 \horrule{2pt} \\[0.5cm] % Thick bottom horizontal rule
 }
 
@@ -72,76 +72,58 @@
 %	PROBLEM 1
 %----------------------------------------------------------------------------------------
 
-\section{Problem title}
+\section*{Section 3.3, Ex. 3}
+\newcommand{\nin}{n \in \mathbb{N}}
+\newcommand{\pf}{\paragraph{Proof.}}
+\newcommand{\done}{$\blacksquare$}
 
-\lipsum[2] % Dummy text
+Let $x_1 \geq 2$ and $x_{n+1} := 1 + \sqrt{x_n - 1}$ for $\nin$. Show that $(x_n)$ is decreasing and bounded below by $2$. Find the limit.
 
-\begin{align} 
-\begin{split}
-(x+y)^3 	&= (x+y)^2(x+y)\\
-&=(x^2+2xy+y^2)(x+y)\\
-&=(x^3+2x^2y+xy^2) + (x^2y+2xy^2+y^3)\\
-&=x^3+3x^2y+3xy^2+y^3
-\end{split}					
-\end{align}
+\pf We can demonstrate by induction that $(x_n)$ is bounded below by 2. First note that $x_1 \geq 2$ by by hypothesis. Thus,
 
-Phasellus viverra nulla ut metus varius laoreet. Quisque rutrum. Aenean imperdiet. Etiam ultricies nisi vel augue. Curabitur ullamcorper ultricies
+\begin{gather*}
+x_1 \geq 2 \\
+x_1 - 1 \geq 1\\
+\sqrt{x_1 - 1} \geq 1\\
+1 + \sqrt{x_1 - 1} \geq 1 + 1\\
+x_2 \geq 2
+\end{gather*}
 
-%------------------------------------------------
+so we have a basis for induction. Assume now that $x_n \geq 2$, and we will use this to demonstrate that $x_{n+1} \geq 2$:
 
-\subsection{Heading on level 2 (subsection)}
+\begin{gather*}
+x_n \geq 2 \\
+x_n - 1 \geq 1\\
+\sqrt{x_n - 1} \geq 1\\
+1 + \sqrt{x_n - 1} \geq 1 + 1\\
+x_{n+1} \geq 2
+\end{gather*}
 
-Lorem ipsum dolor sit amet, consectetuer adipiscing elit. 
-\begin{align}
-A = 
-\begin{bmatrix}
-A_{11} & A_{21} \\
-A_{21} & A_{22}
-\end{bmatrix}
-\end{align}
-Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem.
+Thus we have confirmed that $(x_n)$ is bounded below by 2.\\
 
-%------------------------------------------------
+We can also demonstrate by induction that $(x_n)$ is decreasing. Begin by noting that $x_1 \geq 2$, which implies that $x_1 - 1 \geq 1$. This tells us that $\sqrt{x_1} \geq 1$. Taking the difference of the previous equations tells us that $(x_1 - 1) - (\sqrt{x_1 - 1}) \geq 0$, and thus that $x_1 \geq 1 + \sqrt{x_1 - 1} = x_2$. Since $x_1 \geq x_2$, we have established a basis for induction.\\
 
-\subsubsection{Heading on level 3 (subsubsection)}
+Now assume that $x_{n-1} \geq x_n$ and recall that since 2 is a lower bound, $x_n - 1 \geq 1$. We aim to show that this implies $x_n \geq x_{n+1}$.
 
-\lipsum[3] % Dummy text
+\begin{gather*}
+x_{n-1} \geq x_n\\
+x_{n-1} - 1 \geq x_n - 1\\
+\sqrt{x_{n-1} - 1} \geq \sqrt{x_n - 1}\\
+1 + \sqrt{x_{n-1} - 1} \geq 1 + \sqrt{x_n - 1}\\
+x_n \geq x_{n+1}
+\end{gather*}
 
-\paragraph{Heading on level 4 (paragraph)}
+Thus we have shown that $(x_n)$ decreases.\\
 
-\lipsum[6] % Dummy text
+Since $(x_n)$ is decreasing, bounded below, and recursively defined, we may calculate its limit by acknowledging that $\lim(x_n) = \lim(x_{n+1})$, and for convenience we shall denote this $x*$. Thus,
 
-%----------------------------------------------------------------------------------------
-%	PROBLEM 2
-%----------------------------------------------------------------------------------------
+\begin{gather*}
+x^* = 1 + \sqrt{x^* - 1}\\
+x^* + 1 = \sqrt{x^* - 1}\\
+(x^* + 1)^2 = x^* - 1\\
+{x^*}^2 - 3x^* + 2 = 0
+\end{gather*}
 
-\section{Lists}
-
-%------------------------------------------------
-
-\subsection{Example of list (3*itemize)}
-\begin{itemize}
-	\item First item in a list 
-		\begin{itemize}
-		\item First item in a list 
-			\begin{itemize}
-			\item First item in a list 
-			\item Second item in a list 
-			\end{itemize}
-		\item Second item in a list 
-		\end{itemize}
-	\item Second item in a list 
-\end{itemize}
-
-%------------------------------------------------
-
-\subsection{Example of list (enumerate)}
-\begin{enumerate}
-\item First item in a list 
-\item Second item in a list 
-\item Third item in a list
-\end{enumerate}
-
-%----------------------------------------------------------------------------------------
+The solutions of the final quadratic equation are 1 and 2, however, since 2 is a lower bound for $(x_n)$, we know its limit may not be 1. Thus, $\lim(x_n) = 2$.
 
 \end{document}
