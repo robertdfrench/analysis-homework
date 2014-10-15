@@ -190,4 +190,25 @@ Let $x_n := 1/1^1 + 1/2^2 + \cdots + 1/n^2$ for each $\nin$. Prove that $(x_n)$ 
 
 The book tells us that $1/k^2 \leq 1/k(k-1) = 1/(k-1) - 1/k$ when $k \geq 2$. Noting that $x_k - x_{k-1} = 1/k^2$ and also that $\lim(1/k^2) = 0$, we have that $\lim(x_k - x_{k-1}) = 0$. This tells us that for large enough $k$, we have $|x_k - x_{k-1}| < \epsilon$, so by the Cauchy Criterion $(x_n)$ converges. This infers that it is bounded above. \done
 
+\section*{Section 3.3, Ex 3.2}
+
+Use the method of Example 3.4.3(b) to show that if $0 < c < 1$, then $\lim(c^{1/n}) = 1$.
+
+\pf We begin by showing that $(z_n)$ is increasing. Consider that
+
+\begin{gather*}
+c < 1\\
+c^{1/n} < 1\\
+c^{1/n} \cdot c < 1 \cdot c < 1\\
+c^{1/n + 1} < c < 1\\
+c^{(n + 1)/n} < c < 1\\
+c^{1/n} < c^{1/(n+1)} < 1\\
+\end{gather*}
+
+which tells us that $(z_n)$ is both increasing and bounded above by 1. This confirms that $\lim(z_n)$ exists, so let us call it $z^*$. Thus, the subsequence $(z_{2n})$ exists and converges to $z^*$.\\
+
+Since $z_{2n} = c^{1/2n} = \sqrt{c^{1/n}}$, we know $\lim(z_{2n}) = \sqrt{z^*}$. But since $\lim(z_{2n}) = z*$,  we have that $z* = \sqrt{z*}$. Thus, $z* \in {0,1}$. Since $z_1 = c > 0$, and $(z_n)$ is increasing, we know that $z* = 1$. \done
+
+
+
 \end{document}
