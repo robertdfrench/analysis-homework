@@ -149,4 +149,30 @@ x^* = \sqrt{2 + x^*}\\
 
 so that solving with the quadratic formula gives us $x^* = 2$. \done
 
+\section*{Section 3.3., Ex. 5}
+
+Let $y_1 := \sqrt{p}$, where $p > 0$, and $y_{n+1} := \sqrt{ p + y_n}$ for $\nin$. Show that $(y_n)$ converges and find the limit.
+
+\newcommand{\fanin}{\forall \nin}
+\pf The book tells us that $y_n \leq 1 + 2\sqrt{p} ~\fanin$, so $(y_n)$ is bounded above. Since $(y_n)$ is increasing, we know that $\lim(y_n) = \sup\{y_n : \nin\}$, and we call this value $y*$. Since this sequence is recursively defined, $\lim(y_{n+1}) = y^*$. Thus,
+
+\begin{gather*}
+y^* = \sqrt{p + y^*}\\
+(y^*)^2 = p + y^*\\
+(y^*) - y^* = p\\
+(y^*)^2 - y^* - p = 0\\
+\end{gather*}
+
+so by the quadratic formula, $y* \in \{\frac{1 + \sqrt{1 + 4p}}{2}, \frac{1 - \sqrt{1 + 4p}}{2}\}$. We can rule out the second element by noting that:
+
+\begin{gather*}
+p > 0\\
+4p > 0\\
+1 + 4p > 1\\
+\sqrt{1 + 4p} > 1\\
+-\sqrt{1 + 4p} < -1\\
+1 - \sqrt{1 + 4p} < 0\\
+\end{gather*}
+
+and since $y_n > 0$, it is clear that $y^* = \frac{1 + \sqrt{1 + 4p}}{2}$.\done
 \end{document}
