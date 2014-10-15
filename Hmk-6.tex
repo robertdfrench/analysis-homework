@@ -209,6 +209,19 @@ which tells us that $(z_n)$ is both increasing and bounded above by 1. This conf
 
 Since $z_{2n} = c^{1/2n} = \sqrt{c^{1/n}}$, we know $\lim(z_{2n}) = \sqrt{z^*}$. But since $\lim(z_{2n}) = z^*$,  we have that $z^* = \sqrt{z^*}$. Thus, $z^* \in {0,1}$. Since $z_1 = c > 0$, and $(z_n)$ is increasing, we know that $z^* = 1$. \done
 
+\section*{Section 3.3, Ex 4}
+
+\subsection*{Part A}
+
+Show that $(x_n) = (1 - (-1)^n + 1/n)$ diverges.
+
+\pf $\lim(x_{2n}) = \lim(1 - 1 + 1/2n) = 0$, but $\lim(x_{2n - 1}) = \lim(1 + 1 + \frac{1}{2n - 1}) = 2$, so $(x_n)$ contains two convergent subsequences whose limits are unequal. Thus, $(x_n)$ diverges. \done
+
+\subsection*{Part B}
+
+Show that $(y_n) = (\sin(\frac{n\pi}{4}))$ diverges.
+
+\pf $y_{8n} = \sin(\frac{8n\pi}{4}) = \sin(2n\pi) = 0$, which is a constant sequence. $y_{8n-1} = \sin(\frac{(8n - 1)\pi}{4}) = \sin(2n\pi - \pi/4) = -1$, which is also a constant sequence. Thus, $(y_n)$ contains two convergent subsequences whose limits are unequal. Thus, $(y_n)$ diverges. \done
 
 
 \end{document}
