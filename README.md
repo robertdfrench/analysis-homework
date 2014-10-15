@@ -15,6 +15,7 @@ This repo uses the [Short Sectioned Assignment](http://www.latextemplates.com/te
 3. Not available
 4. [PDF](https://github.com/robertdfrench/analysis-homework/blob/master/Hmk-4.pdf?raw=true)
 5. [PDF](https://github.com/robertdfrench/analysis-homework/blob/master/Hmk-5.pdf?raw=true)
+6. [PDF](https://github.com/robertdfrench/analysis-homework/blob/master/Hmk-6.pdf?raw=true)
 
 ### License
 
