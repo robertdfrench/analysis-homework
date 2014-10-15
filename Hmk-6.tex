@@ -190,7 +190,7 @@ Let $x_n := 1/1^1 + 1/2^2 + \cdots + 1/n^2$ for each $\nin$. Prove that $(x_n)$ 
 
 The book tells us that $1/k^2 \leq 1/k(k-1) = 1/(k-1) - 1/k$ when $k \geq 2$. Noting that $x_k - x_{k-1} = 1/k^2$ and also that $\lim(1/k^2) = 0$, we have that $\lim(x_k - x_{k-1}) = 0$. This tells us that for large enough $k$, we have $|x_k - x_{k-1}| < \epsilon$, so by the Cauchy Criterion $(x_n)$ converges. This infers that it is bounded above. \done
 
-\section*{Section 3.3, Ex 2}
+\section*{Section 3.4, Ex 2}
 
 Use the method of Example 3.4.3(b) to show that if $0 < c < 1$, then $\lim(c^{1/n}) = 1$.
 
@@ -209,7 +209,7 @@ which tells us that $(z_n)$ is both increasing and bounded above by 1. This conf
 
 Since $z_{2n} = c^{1/2n} = \sqrt{c^{1/n}}$, we know $\lim(z_{2n}) = \sqrt{z^*}$. But since $\lim(z_{2n}) = z^*$,  we have that $z^* = \sqrt{z^*}$. Thus, $z^* \in {0,1}$. Since $z_1 = c > 0$, and $(z_n)$ is increasing, we know that $z^* = 1$. \done
 
-\section*{Section 3.3, Ex 4}
+\section*{Section 3.4, Ex 4}
 
 \subsection*{Part A}
 
@@ -223,5 +223,46 @@ Show that $(y_n) = (\sin(\frac{n\pi}{4}))$ diverges.
 
 \pf $y_{8n} = \sin(\frac{8n\pi}{4}) = \sin(2n\pi) = 0$, which is a constant sequence. $y_{8n-1} = \sin(\frac{(8n - 1)\pi}{4}) = \sin(2n\pi - \pi/4) = -1$, which is also a constant sequence. Thus, $(y_n)$ contains two convergent subsequences whose limits are unequal. Thus, $(y_n)$ diverges. \done
 
+\section*{Section 3.4, Ex 5}
+
+Let $X = (x_n)$ and $Y = (y_n)$ be given sequences, and let the ``shuffled'' sequence $Z = (z_n)$ be defined by $z_{2n - 1} := x_n$ and $z_{2n} := y_n$. Show that $Z$ is convergent if and only if both $X$ and $Y$ are convergent and $\lim X = \lim Y$.
+
+\pf We prove the logical equivalence of these statements in each direction separately.\\
+
+($\rightarrow$) Assume that $Z$ converges to $z^*$, then any subsequence of $Z$ also converges to $z^*$. Thus, $\lim X = \lim Y = z^*$.\\
+
+($\leftarrow$) Assume $X$ and $Y$ converge and that $\lim X = \lim Y$, but that $\lim Z = z^* \neq \lim X$. Then $|z^* - \lim X | = c$, so choose $\epsilon < c$, then $\exists M(\epsilon) \nin$ such that
+
+\begin{equation*}
+|z_{2n} - \lim X | < \epsilon \text{~and~} |z_{2n-1} - \lim X| < \epsilon
+\end{equation*}
+
+That is, all $z_j$ for $j$ even or odd lie in an $\epsilon$-neighborhood of $c$, so that for any choice of $\delta > 0$, only finitely many $z_j$ lie in $V_\delta(z^*)$. \done
+
+\section*{Section 3.4, Ex 7}
+
+\subsection*{Part A}
+
+Find $\lim((1 + 1/n^2)^{n^2})$ if it exists.
+
+\pf The sequence $(1 + 1/n^2)^{n^2}$ is a subsequence of $(1 + 1/n)^n$. Since $(1 + 1/n)^n \rightarrow e$, we know that $(1 + 1/n^2)^{n^2} \rightarrow e$. \done
+
+\subsection*{Part D}
+
+Find $\lim((1 + 2/n)^{n})$ if it exists.
+
+\pf Let $n = 2j$, then $(1 + 2/2j)^{2j} = (1 + 1/j)^{2j} = (1 + 1/j)^j \cdot (1 + 1/j)^j$. Since we know $\lim(1 + 1/j)^j = e$, then by the limit laws we know that $\lim(1 + 2/n)^{n} = e^2$. \done
+
+\subsection*{Part C}
+
+Find $\lim((1 + 1/n^2)^{2n^2})$ if it exists.
+
+\pf Take $m = n^2$, so that is becomes clear that we are working with a subsequence of $(1 + 1/m)^{2m}$. In Part D, we showed that $(1 + 1/m)^{2m} = (1 + 1/m) \cdot (1 + 1/m)$ and that the limit of this sequence is $e^2$. Thus, the $\lim((1 + 1/n^2)^{2n^2}) = e^2$. \done
+
+\subsection*{Part B}
+
+Find $\lim(1 + 1/2n)^n$ if it exists.
+
+\pf Take $m = 2n$, so that it becomes clear that $(1 + 1/2n)^{2n}$ is a subsequence of $(1 + 1/n)^n$ and thus $\lim(1 + 1/2n)^{2n} = e$. We know from the limit laws that the root of a convergent sequence converges to the root of the sequence's limit. Thus, $\lim(\sqrt{(1 + 1/2n)^{2n}}) = \lim(1 + 1/2n)^n = \sqrt{e}$. \done
 
 \end{document}
